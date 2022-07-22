@@ -6,7 +6,6 @@ pluginManagement {
         mavenCentral()
         mavenLocal()
     }
-    includeBuild("plugins")
 }
 dependencyResolutionManagement {
     repositories {
@@ -17,16 +16,13 @@ dependencyResolutionManagement {
     dependencyResolutionManagement {
         versionCatalogs {
             create("libs") {
-                from(files("gradle/libs.versions.toml"))
+                from(files("../gradle/libs.versions.toml"))
             }
         }
     }
 }
-rootProject.name = "composite-build"
 
-includeBuild("sample")
-
-
-
-
-
+include(":app")
+include(":lib-a")
+include(":lib-b")
+include(":lib-c")

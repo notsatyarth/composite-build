@@ -1,9 +1,6 @@
-import com.android.build.api.attributes.BuildTypeAttr
-
 plugins {
-    id("com.android.library")
+    id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.plugin.sample")
 }
 
 /**
@@ -11,15 +8,17 @@ plugins {
  * and the version details to use
  */
 android {
-    compileSdkVersion(32)
+
+    compileSdk = 32
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(30)
-//        versionCode = 1
-//        versionName = "1.0"
+        applicationId = "com.sample.build"
+        minSdk = 21
+
+        targetSdk = 32
+        versionCode = 1
+        versionName = "1.0"
     }
 
-    namespace = "com.sample.libc"
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
@@ -35,7 +34,7 @@ android {
                 "proguard-rules.pro"
             )
         }
-      
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -46,12 +45,12 @@ android {
 
 
 
-
 dependencies {
     implementation(libs.coreKtx)
     implementation(libs.appcompat)
-    implementation(libs.material)
-    implementation(libs.android.gradle.plugin)
-    implementation(project(":lib-a"))
-    implementation(project(":lib-b"))
+    implementation(libs.converter.gson)
+    implementation(project(":lib-c"))
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.android.junit)
+    androidTestImplementation(libs.espresso.core)
 }
