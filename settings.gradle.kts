@@ -6,7 +6,6 @@ pluginManagement {
         mavenCentral()
         mavenLocal()
     }
-    includeBuild("plugins")
 }
 dependencyResolutionManagement {
     repositories {
@@ -18,6 +17,8 @@ dependencyResolutionManagement {
 rootProject.name = "composite-build"
 
 includeBuild("sample")
+includeBuild("plugins")
+includeBuild("build-system")
 
 
 
