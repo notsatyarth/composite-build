@@ -1,13 +1,4 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-        mavenLocal()
-    }
-    includeBuild("../plugins")
-}
 dependencyResolutionManagement {
     repositories {
         google()
@@ -21,7 +12,7 @@ dependencyResolutionManagement {
     }
 }
 
-include(":app")
-include(":lib-a")
-include(":lib-b")
-include(":lib-c")
+
+
+
+
